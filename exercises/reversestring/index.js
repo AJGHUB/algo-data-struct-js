@@ -59,3 +59,16 @@ module.exports = reverse;
 //     return arr.join('');
 //  }
 //  module.exports = reverse;
+
+
+// DEBUG practice
+// function reverse(str) {
+//   debugger;
+//   return str.split('').reduce((reversed, character) => {
+//     //array str.string takes values and condense to single string value
+//     return character + reversed;
+//   }, '');
+// }
+// reverse('asdf');
+
+// module.exports = reverse;
