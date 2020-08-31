@@ -18,12 +18,12 @@ function fizzBuzz(n) {
     for (let i = 1; i <= n; i++) { //specifically iterate from 1 to n not from 0 
         //check to see if number a multiple of 3 & 5 if so console log here
     if (i % 3 === 0 && i % 5 === 0) {
-     console.log('fizzbuzz');
+        console.log('fizzbuzz');
     } else if (i % 3 === 0) {
         //Is the number a multiple of 3?
         console.log('fizz');
     } else if (i % 5 === 0) {
-         //Is the number a multiple of 3?
+         //Is the number a multiple of 5?
         console.log('buzz')
     } else {
          //Is the number a multiple of 3/5 or 15 if not:
