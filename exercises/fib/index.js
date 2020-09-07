@@ -14,6 +14,17 @@ module.exports = fib;
 
 
 
+
+
+
+
+
+
+
+
+
+
+//NOTES
 //performance of algoritim; Runtime Complexity notes Different cases: 
 //Constant Time: (1) No matter how many elements we work with, the algorithm / operation / whatever will always take the same amount of time.
 //Logarithmic: (logn) You have this if doubling the number of elements you are iterating over doesnt double the amount of work. Always assume that searching options are log(n)
