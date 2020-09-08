@@ -8,24 +8,32 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+// function fib(n) {}
 
+// if (num <= 1) return 1;
+// return fib(n - 1) + fibonacci(num - 2);
+
+// module.exports = fib;
+
+
+//Fib solution 1 iterative option:
+function fib(n) {
+  const result = [0, 1]; //start @ 2 in array manually insert 0 & 1 into result set to produce the math addition
+
+  for (let i = 2; i <= n; i++) {
+    // for loop start iteration at 2 all the way up to n
+    const a = result[i - 1]; //inside of for loop pull out prev two records and add and push into result set [result.length -1] another option here
+    const b = result[i - 2]; //result at i - 2  calculated by 2 - 2 which gives 0 the first element in array
+
+    result.push(a + b); //generates fib series up to entry n
+  }
+
+  return result[n]; //OR to get last entry....  result[result.length -1];
+}
 module.exports = fib;
 
-
-
-
-
-
-
-
-
-
-
-
-
 //NOTES
-//performance of algoritim; Runtime Complexity notes Different cases: 
+//performance of algoritim; Runtime Complexity notes Different cases:
 //Constant Time: (1) No matter how many elements we work with, the algorithm / operation / whatever will always take the same amount of time.
 //Logarithmic: (logn) You have this if doubling the number of elements you are iterating over doesnt double the amount of work. Always assume that searching options are log(n)
 //Linear Time (n) Iterating through all elements in a collection of data. If you see a for loop spanning from '0' to array.length'
