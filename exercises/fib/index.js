@@ -8,16 +8,38 @@
 // Example:
 //   fib(4) === 3
 
+//MEMOIZER FUNCTION
+//call a funct with a funct then return a funct
+//calling slowfib is too slow before its called make a data store is created with args call slow fib with
+//call slow fib take n with result and store in cache ob > if called look in cache ob and use that > stops same set of arg time constraint
+// be sure to call the memoized version of the funct, the original function is different is slowFib(original funct slow one) fib(memoized new fast)
 
+function memoize(fn) {
+  const cache = {};
+  return function (...args) {
+    //...args = takes all args assign as array to var args
+    if (cache[args]) {
+      //has funct been called w set of args? key args = immediately return
+      return cache[args]; //return just the result of args. Dont call orig funct!! return only
+    }
 
+    const result = fn.apply(this, args); // funct w array use apply helper to call args basic JS > pass in this & args
+    cache[args] = result; //in cache object, at key args, store result just created, return result
 
+    return result;
+  };
+}
 
+function slowFib(n) {
+  if (n < 2) {
+    return n;
+  }
 
+  return fib(n - 1) + fib(n - 2);
+}
+const fib = memoize(slowFib);
 
-
-
-
-
+module.exports = fib;
 
 // Recursive solution for fib;
 // function fib(n) {       //base case that returns value - use a tree diagram if unsure
@@ -35,9 +57,6 @@
 // ...avoid duplicate calls to fib funct with identical args
 //USE 'MEMOIZATION' term that stores args of each funct call along with the result. "arg, run funct, store result > called again? ret result !"
 // If the function is called again with the same argument, return the precomputed result, rather than run func again
-
-
-
 
 //Fib solution 1 iterative option:
 //The runtime complexity of this is linear runtime. A fixed for loop that iterates over close set
