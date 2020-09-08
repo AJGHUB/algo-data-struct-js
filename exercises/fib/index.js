@@ -8,29 +8,53 @@
 // Example:
 //   fib(4) === 3
 
-// function fib(n) {}
 
-// if (num <= 1) return 1;
-// return fib(n - 1) + fibonacci(num - 2);
+
+
+
+
+
+
+
+
+
+
+// Recursive solution for fib;
+// function fib(n) {       //base case that returns value - use a tree diagram if unsure
+//   if (n < 2) {
+//     return n;
+//   }
+
+//   return fib(n - 1) + fib(n - 2);
+// }
 
 // module.exports = fib;
+//the run time of this is?; 'exponential because every increase in n, there will be an big increase in number of funct calls got.
+//how can it be improve the run time to not be exponential? ...
+// ...Funct calls ie fib w 6 is called many times with identical args
+// ...avoid duplicate calls to fib funct with identical args
+//USE 'MEMOIZATION' term that stores args of each funct call along with the result. "arg, run funct, store result > called again? ret result !"
+// If the function is called again with the same argument, return the precomputed result, rather than run func again
+
+
 
 
 //Fib solution 1 iterative option:
-function fib(n) {
-  const result = [0, 1]; //start @ 2 in array manually insert 0 & 1 into result set to produce the math addition
+//The runtime complexity of this is linear runtime. A fixed for loop that iterates over close set
+// function fib(n) {
+//   const result = [0, 1]; //start @ 2 in array manually insert 0 & 1 into result set to produce the math addition
 
-  for (let i = 2; i <= n; i++) {
-    // for loop start iteration at 2 all the way up to n
-    const a = result[i - 1]; //inside of for loop pull out prev two records and add and push into result set [result.length -1] another option here
-    const b = result[i - 2]; //result at i - 2  calculated by 2 - 2 which gives 0 the first element in array
+//   for (let i = 2; i <= n; i++) {
+//     // for loop start iteration at 2 all the way up to n
+//     const a = result[i - 1]; //inside of for loop pull out prev two records and add and push into result set [result.length -1] another option here
+//     const b = result[i - 2]; //result at i - 2  calculated by 2 - 2 which gives 0 the first element in array
 
-    result.push(a + b); //generates fib series up to entry n
-  }
+//     result.push(a + b); //generates fib series up to entry n
+//   }
 
-  return result[n]; //OR to get last entry....  result[result.length -1];
-}
-module.exports = fib;
+//   return result[n]; //OR to get last entry....  result[result.length -1];
+// }
+// module.exports = fib;
 
 //NOTES
 //performance of algoritim; Runtime Complexity notes Different cases:
