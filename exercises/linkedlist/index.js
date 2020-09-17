@@ -37,7 +37,20 @@ class LinkedList {
       return this.head;
   }
 
-} //Test constructor A Node in appends a node to the start of the list
+  getLast() {
+      if (!this.head) {
+          return null;
+      }
+
+  let node = this.head;
+  while (node) {
+      if (!node.next) {
+        return node;
+      }
+      node = node.next;
+  }
+ }
+} 
 
 module.exports = { Node, LinkedList };
 
