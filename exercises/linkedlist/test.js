@@ -10,7 +10,7 @@ test('Node is a class', () => {
   expect(typeof Node.prototype.constructor).toEqual('function');
 });
 
-describe.skip('A Node', () => {
+describe('A Node', () => {
   test('has properties "data" and "next"', () => {
     const node = new Node('a', 'b');
     expect(node.data).toEqual('a');
@@ -281,7 +281,7 @@ describe.skip('ForEach', () => {
     l.insertLast(3);
     l.insertLast(4);
 
-    l.forEach(node => {
+    l.forEach((node) => {
       node.data += 10;
     });
 
