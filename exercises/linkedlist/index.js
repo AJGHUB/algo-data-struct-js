@@ -16,6 +16,16 @@ class LinkedList {
   insertFirst(data) {
     this.head = new node(data, this.head);
   }
+  size(head) {
+      let counter = 0;
+      let node = this.head;
+
+      while (node) {
+          counter++;
+          node = node.next;
+      }
+      return counter;
+  }
 } //Test constructor A Node in appends a node to the start of the list
 
 module.exports = { Node, LinkedList };
