@@ -48,7 +48,7 @@ class LinkedList {
     }
   }
   clear() {
-    this.head = null
+    this.head = null;
   }
   removeFirst() {
     if (!this.head) {
@@ -58,7 +58,7 @@ class LinkedList {
   }
 
   removeLast() {
-    if(!this.head) {
+    if (!this.head) {
       return;
     }
 
@@ -72,39 +72,55 @@ class LinkedList {
     while (node.next) {
       previous = node;
       node = node.next;
-    } 
+    }
     previous.next = null;
   }
 
   insertLast(data) {
     const last = this.getLast();
 
-    if(last) {
+    if (last) {
       // There are some existing nodes in our chain
       last.next = new Node(data);
     } else {
       // The chain is empty
-      this.head = new Node (data);
+      this.head = new Node(data);
     }
   }
 
   getAt(index) {
-   
     let counter = 0;
     let node = this.head;
     while (node) {
-    if (counter === index){
-      return node;
+      if (counter === index) {
+        return node;
+      }
+
+      counter++;
+      node = node.next;
+    }
+    return null;
+  }
+
+  removeAt(index) {
+    if (!this.head) {
+      return;
     }
 
+    if (index === 0) {
+      this.head = this.head.next;
+      return;
+    }
 
-    counter++;
-    node=node.next;
+    const previous = this.getAt(index - 1);
+    if (!previous || !previous.next) {
+      return;
+    }
+
+    previous.next = previous.next.next;
   }
-  return null;
 }
 
-}
 module.exports = { Node, LinkedList };
 
 //A node is a basic unit of a data structure, such as a linked list or tree data structure.
