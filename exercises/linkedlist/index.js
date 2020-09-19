@@ -18,50 +18,41 @@ class LinkedList {
     this.head = new Node(data, this.head);
   }
 
-
   size() {
-      let counter = 0;
-      let node = this.head;
+    let counter = 0;
+    let node = this.head;
 
+    while (node) {
+      counter++;
+      node = node.next;
+    }
 
-      while (node) {
-          counter++;
-          node = node.next;
-      }
-
-      return counter;
+    return counter;
   }
 
-
   getFirst() {
-      return this.head;
+    return this.head;
   }
 
   getLast() {
-      if (!this.head) {
-          return null;
-      }
+    if (!this.head) {
+      return null;
+    }
 
-  let node = this.head;
-  while (node) {
+    let node = this.head;
+    while (node) {
       if (!node.next) {
         return node;
       }
       node = node.next;
+    }
   }
- }
-} 
+  clear() {
+    this.head = null
+  }
+}
 
 module.exports = { Node, LinkedList };
-
-
-
-
-
-
-
-
-
 
 //A node is a basic unit of a data structure, such as a linked list or tree data structure.
 //Nodes contain data and also may link to other nodes.
