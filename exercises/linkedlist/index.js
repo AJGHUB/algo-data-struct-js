@@ -14,10 +14,18 @@ class LinkedList {
     this.head = null;
   }
 
+  //_____________________________Insert First_________________________
+  //option 1
+  // insertFirst(data) {
+  //   this.head = new Node(data, this.head);
+  // }
+
+  //option 2 > use when any retrival of any other elements
   insertFirst(data) {
-    this.head = new Node(data, this.head);
+    this.insertAt(data, 0);
   }
 
+  //_____________________________ Size ________________________________
   size() {
     let counter = 0;
     let node = this.head;
@@ -30,10 +38,19 @@ class LinkedList {
     return counter;
   }
 
+  //_____________________________Get First_________________________
+  //option 1
+  // getFirst() {
+  //   return this.head;
+  // }
+
+  //option 2 > use when any retrieval of any other elements
   getFirst() {
-    return this.head;
+    return this.getAt(0);
   }
 
+  //_____________________________Get Last_________________________
+  //option 1
   getLast() {
     if (!this.head) {
       return null;
@@ -50,6 +67,16 @@ class LinkedList {
   clear() {
     this.head = null;
   }
+
+  //option2
+  // getLast() {
+  // return this.getAt(this.size() - 1);
+  // }
+  // clear() {
+  //   this.head = null;
+  // }
+
+  //_____________________________Remove First_________________________
   removeFirst() {
     if (!this.head) {
       return;
@@ -57,6 +84,7 @@ class LinkedList {
     this.head = this.head.next;
   }
 
+  //_____________________________Remove Last_________________________
   removeLast() {
     if (!this.head) {
       return;
@@ -76,6 +104,7 @@ class LinkedList {
     previous.next = null;
   }
 
+  //_____________________________Insert Last_________________________
   insertLast(data) {
     const last = this.getLast();
 
@@ -88,6 +117,7 @@ class LinkedList {
     }
   }
 
+  //_____________________________Get At_________________________
   getAt(index) {
     let counter = 0;
     let node = this.head;
@@ -102,6 +132,7 @@ class LinkedList {
     return null;
   }
 
+  //_____________________________Remove At_________________________
   removeAt(index) {
     if (!this.head) {
       return;
@@ -120,6 +151,7 @@ class LinkedList {
     previous.next = previous.next.next;
   }
 
+  //_____________________________Insert At_________________________
   insertAt(data, index) {
     if (!this.head) {
       this.head = new Node(data);
