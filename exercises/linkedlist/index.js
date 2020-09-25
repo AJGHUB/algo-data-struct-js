@@ -174,7 +174,34 @@ class LinkedList {
   // √ insert a new node when index is out of bounds (1 ms)
 }
 
+
+// forEach(fn) {
+//   let node = this.head;
+//   let counter = 0;
+//   while (node) {
+//     fn(node, counter);
+//     node = node.next;
+//     counter++;
+//   }
+// }
+
+//   *[Symbol.iterator]() {
+//     let node = this.head;
+//       while (node) {
+//         yield node;
+//           node = node.next;
+//           }
+//    }
+// }  > does not pass ! why??
+// jest linkedlist/test.js --watch
+
+
 module.exports = { Node, LinkedList };
+
+
+
+
+
 
 //A node is a basic unit of a data structure, such as a linked list or tree data structure.
 //Nodes contain data and also may link to other nodes.

@@ -9,7 +9,5 @@ Tackle common data structures used in web development.
 Practice dozens of different challenges.
 Use Javascript to solve challenging algorithms.
 
-
 INSTALL: npm install -g jest
-each test: jest reversestring.js --watch
-
+each test: jest reversestring/test.js --watch
