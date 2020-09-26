@@ -1,4 +1,5 @@
 // --- Directions
+// cd into exercises for test suite run: jest linkedlist/test.js --watch
 // Implement classes Node and Linked Lists
 // See 'directions' document
 
@@ -167,34 +168,32 @@ class LinkedList {
     const node = new Node(data, previous.next);
     previous.next = node;
   }
+
   // √ inserts a new node with data at the 0 index when the list is empty (1 ms)
   // √ inserts a new node with data at the 0 index when the list has elements
   // √ inserts a new node with data at a middle index (1 ms)
   // √ inserts a new node with data at a last index
   // √ insert a new node when index is out of bounds (1 ms)
+
+forEach(fn) {
+  let node = this.head;
+  let counter = 0;
+  while (node) {
+    fn(node, counter);
+    node = node.next;
+    counter++;
+  }
 }
 
-
-// forEach(fn) {
-//   let node = this.head;
-//   let counter = 0;
-//   while (node) {
-//     fn(node, counter);
-//     node = node.next;
-//     counter++;
-//   }
-// }
-
-//   *[Symbol.iterator]() {
-//     let node = this.head;
-//       while (node) {
-//         yield node;
-//           node = node.next;
-//           }
-//    }
-// }  > does not pass ! why??
-// jest linkedlist/test.js --watch
-
+  *[Symbol.iterator]() {
+    let node = this.head;
+    while (node) {
+      yield node;
+      node = node.next;
+    }
+  }
+}
+  
 
 module.exports = { Node, LinkedList };
 
