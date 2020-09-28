@@ -17,8 +17,7 @@ class Node {
     }
 
     add (data) {
-        const node = new Node(data);
-        this.children.push(node);
+        this.children.push(new Node(data));
     }
 
     remove(data) {
@@ -26,10 +25,35 @@ class Node {
             return node.data !==data;
         }); //equals data or removes it
     }
-
-
 }
 
-class Tree {}
+
+
+class Tree {
+    constructor() {
+        this.root = null;
+    }
+
+    traverseBF(fn) {
+        const arr = [this.root];
+        while (arr.length) {
+            const node = arr.shift(); //shift built in arr method removes 1st element of arr 
+            
+            arr.push(...node.children); //'...'es 2015 spread op take elements push one by one into arr(same as for loop)
+           fn(node);
+        }    
+    }
+
+    traverseDF(fn) {
+        const arr = [this.root];
+        while(arr.length) {
+            const node = arr.shift();
+
+            arr.unshift(...node.children); //unshift built in array method takes element add onto front of arr
+            fn(node);
+        }
+    }
+}
+
 
 module.exports = { Tree, Node };
