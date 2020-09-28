@@ -1,6 +1,8 @@
 // --- Directions
 // Given a linked list, return true if the list
 // is circular, false if it is not.
+//A linked list has a head and a tail> the tail can be identified as it points to the tail as null. A circ LL has no tail. 
+//A circular LL makes 2 separate variables moving them forward through while & if comparing value at every step
 // --- Examples
 //   const l = new List();
 //   const a = new Node('a');
@@ -15,7 +17,7 @@
 function circular(list) {
     let slow = list.getFirst();
     let fast = list.getFirst();
-    
+
 
     while (fast.next && fast.next.next) {
         slow = slow.next;
