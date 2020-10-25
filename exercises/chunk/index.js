@@ -37,20 +37,20 @@ module.exports = chunk;
 //ELSE add the current element into the chunk
 
 //Iterative solution 1 option:
-// function chunk(array, size) {
-//     const chunked = []; //new array holds chunks of data
+function chunk(array, size) {
+    const chunked = []; //new array holds chunks of data
 
-//     //iterate through array to get last element of array
-//     for (let element of array) {
-//         const last = chunked[chunked.length - 1];
-//     //check if last element does not exist or if length is equal to chunk size then add a new element to chunk and put element inside that
-//         if (!last || last.length === size) {
-//             chunked.push([element]);
-//         } else {
-//             last.push(element) //otherwise push last element into end of chunked array
-//         }
-//         }
-//         return chunked;
-//     }
+    //iterate through array to get last element of array
+    for (let element of array) {
+        const last = chunked[chunked.length - 1];
+    //check if last element does not exist or if length is equal to chunk size then add a new element to chunk and put element inside that
+        if (!last || last.length === size) {
+            chunked.push([element]);
+        } else {
+            last.push(element) //otherwise push last element into end of chunked array
+        }
+        }
+        return chunked;
+    }
 
-// module.exports = chunk;
+module.exports = chunk;

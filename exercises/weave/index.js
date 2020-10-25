@@ -9,6 +9,7 @@
 // 'undefined' into the new one.
 // *Do not* access the array inside of any queue, only
 // use the 'add', 'remove', and 'peek' functions.
+
 // --- Example
 //    const queueOne = new Queue();
 //    queueOne.add(1);
