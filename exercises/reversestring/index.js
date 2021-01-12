@@ -5,16 +5,24 @@
 //   reverse('apple') === 'leppa'
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
-//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse#:~:text=The%20reverse%20method%20transposes%20the,applied%20to%20objects%20resembling%20arrays.
 
-function reverse(str) {
-  return str.split('').reduce((reversed, character) => {
-    //array str.string takes values and condense to single string value
-    return character + reversed;
-  }, '');
+//DOCS https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse#:~:text=The%20reverse%20method%20transposes%20the,applied%20to%20objects%20resembling%20arrays.
+
+//pseudo code
+// turn/convert 'str' into an array
+// call 'reverse' method on array
+// join the array back into a string
+//return the result
+
+
+function reverse (str) {
+  const arr = str.split('');
+  arr.reverse();
+  return arr.join('');
 }
 
 module.exports = reverse;
+
 
 //es6 JS syntax difference solution 3
 // function reverse(str) {
