@@ -8,6 +8,7 @@
 
 //DOCS https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse#:~:text=The%20reverse%20method%20transposes%20the,applied%20to%20objects%20resembling%20arrays.
 
+//2nd run through 1/2/21
 //pseudo code
 // turn/convert 'str' into an array
 // call 'reverse' method on array
