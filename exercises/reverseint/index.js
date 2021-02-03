@@ -12,20 +12,39 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
+//  3/2/2021 2nd run through
+// function reverseInt(n) {
+//   const reversed = n
+//   .toString()
+//   .split('')
+//   .join('');
+
+//   if (n < 0) {
+//     return parseInt(reversed) * -1;
+//   }
+//   return parseInt(reversed);
+//   }
+
+//   module.exports = reverseInt;
+
+
+
+
+
 //solution 3 one line tidy code - tough to understand whats goin on in this one
-function reverseInt(n) {
-    return (
-      parseInt(
-          n
-            .toString()
-            .split('')
-            .reverse()
-            .join('')
-      ) * Math.sign(n)
-    );
-} 
+// function reverseInt(n) {
+//     return (
+//       parseInt(
+//           n
+//             .toString()
+//             .split('')
+//             .reverse()
+//             .join('')
+//       ) * Math.sign(n)
+//     );
+// } 
    
-module.exports = reverseInt;
+// module.exports = reverseInt;
 
 
 //solution 2
