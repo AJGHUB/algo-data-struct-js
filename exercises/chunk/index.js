@@ -15,18 +15,50 @@
 //inside of while loop take then push a slice of length 'size' from 'array' into chunked array
 //re loop function and it gives whats left this is added 'size to index
 
+
+// function chunk (array, size) {
+//     const chunked = [];
+//     let index = 0;
+//     while (index < array.length) {
+//         chunked.push(array.slice(index + size));
+//         index += size;
+//     }
+// }
+
+
+//second run through 
 function chunk(array, size) {
-  const chunked = []; //empty array
-  let index = 0; //variable changing over time 'let'
-  //while loop index is less thant array length | array
-  //takes slice from original array. Using chunked.push slice is added in
-  while (index < array.length) {
-    chunked.push(array.slice(index, index + size));
-    index += size;
-  } //index variable add size to it to increment by size
-  return chunked;
+    const chunked = []
+    
+    
+    for (let element of array) {
+        const last = chunked[chunked.length - 1];
+
+        if (!last || last.length === size) {
+            chunked.push([element]);
+        } else {
+            last.push(element);
+        }
+    }
+
+    return chunked;
 }
+
 module.exports = chunk;
+
+
+// function chunk(array, size) {
+//   const chunked = []; //empty array
+//   let index = 0; //variable changing over time 'let'
+//   //while loop index is less thant array length | array
+//   //takes slice from original array. Using chunked.push slice is added in
+//   while (index < array.length) {
+//     chunked.push(array.slice(index, index + size));
+//     index += size;
+//   } //index variable add size to it to increment by size
+//   return chunked;
+// }
+// module.exports = chunk;
 
 //pseudo code
 // create empty array to hold chunks called 'chunked'
@@ -36,21 +68,25 @@ module.exports = chunk;
 //Push a new chunk into 'chunked' with the current element
 //ELSE add the current element into the chunk
 
-//Iterative solution 1 option:
-function chunk(array, size) {
-    const chunked = []; //new array holds chunks of data
 
-    //iterate through array to get last element of array
-    for (let element of array) {
-        const last = chunked[chunked.length - 1];
-    //check if last element does not exist or if length is equal to chunk size then add a new element to chunk and put element inside that
-        if (!last || last.length === size) {
-            chunked.push([element]);
-        } else {
-            last.push(element) //otherwise push last element into end of chunked array
-        }
-        }
-        return chunked;
-    }
 
-module.exports = chunk;
+
+
+// //Iterative solution 1 option:
+// function chunk(array, size) {
+//     const chunked = []; //new array holds chunks of data
+
+//     //iterate through array to get last element of array
+//     for (let element of array) {
+//         const last = chunked[chunked.length - 1];
+//     //check if last element does not exist or if length is equal to chunk size then add a new element to chunk and put element inside that
+//         if (!last || last.length === size) {
+//             chunked.push([element]);
+//         } else {
+//             last.push(element) //otherwise push last element into end of chunked array
+//         }
+//         }
+//         return chunked;
+//     }
+
+// module.exports = chunk;
